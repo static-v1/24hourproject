@@ -18,8 +18,12 @@ body {
     font-weight: 600;
 }
 
-#navbar a.currency-dropdown {
+#navbar a#currency-dropdown-btn {
     border: 1px;
     border-style: solid;
     border-color: #f2f2f2;
+}
+
+#navbar a#currency-dropdown-btn::after {
+    display: none;
 }

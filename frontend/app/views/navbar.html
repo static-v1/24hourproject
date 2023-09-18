@@ -8,26 +8,26 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <!-- left nav -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link mx-2 active" aria-current="page" href="#">WOMAN</a>
+                    <a class="nav-link mx-1 active" aria-current="page" href="#">WOMAN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2" href="#">PLUS</a>
+                    <a class="nav-link mx-1" href="#">PLUS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2" href="#">MAN</a>
+                    <a class="nav-link mx-1" href="#">MAN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2" href="#">ACCESSORIES</a>
+                    <a class="nav-link mx-1" href="#">ACCESSORIES</a>
                 </li>
             </ul>
 
             <!-- nav brand -->
-            <a class="navbar-brand justify-content-center" href="#"><img src="{{ navAssetsDir + 'Logo.svg' }}" alt="THREADED"></a>
+            <a class="navbar-brand mx-auto" href="#"><img src="{{ navAssetsDir + 'Logo.svg' }}" alt="THREADED"></a>
             
             <!-- right nav -->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-end">
+            <ul class="navbar-nav mb-2 mb-lg-0 me-4">
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="#"><img src="{{ navAssetsDir + 'user.png' }}" alt="User"></a>
                 </li>
@@ -43,10 +43,11 @@
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="#"><img src="{{ navAssetsDir + 'search.png' }}" alt="Search"></a>
                 </li>
-                <li class="nav-item dropdown ms-1 me-4">
-                    <a class="nav-link dropdown-toggle rounded-pill currency-dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown ms-1 me-auto">
+                    <a class="nav-link dropdown-toggle rounded-pill" id="currency-dropdown-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{ selectedCurrency.flag }}" alt="{{ selectedCurrency.alt }}" class="rounded-pill">
                         {{ selectedCurrency.label }}
+                        <img src="{{ navAssetsDir + 'caret-down.png' }}" alt="⌄">
                     </a>
                     <ul class="dropdown-menu">
                         <li>
