@@ -228,3 +228,45 @@ body {
     box-shadow: 0px 4px 4px 0px #00000040;
     border-width: 0px;
 }
+
+
+/* trending section */
+
+#trending {
+    padding-top: 40px;
+}
+
+#trending-header span {
+    font-weight: 800;
+    font-size: 36px;
+}
+
+#trending-caption {
+    padding-top: 30px;
+}
+
+#trending-caption span {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#trending-content div.row {
+    padding-top: 40px;
+}
+
+#trending-content div.row span {
+    font-weight: 600;
+    font-size: 24px;
+    display: inline-block;
+    width: 104%;
+}
+
+#trending-hashtags div.hashtag {
+    margin-top: 40px;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px 10px 20px;
+    margin-left: 10px;
+}
