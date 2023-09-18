@@ -1,0 +1,9 @@
+#setup the docker compose file for the projected expansion of the project, makes it easier to duplicate environment on another workstation
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend_c
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
