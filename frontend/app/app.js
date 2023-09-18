@@ -5,9 +5,10 @@ var shopApp = angular.module('shopApp', ['Directives'])
         $rootScope.title = 'THREADED';
         $rootScope.assetsDir = '/assets/';
         $rootScope.viewsDir = '/app/views/';
+        $rootScope.imgAssetsDir = $rootScope.assetsDir + 'img/';
     })
 
-    .controller('BenefitsBarController', ['$scope', '$rootScope', function($scope, $rootScope) {
-        $scope.bbAssetsDir = $rootScope.assetsDir + 'img/benefits-bar/';
-    }])
+    // .controller('BenefitsBarController', ['$scope', '$rootScope', function($scope, $rootScope) {
+    //     $scope.bbAssetsDir = $rootScope.assetsDir + 'img/benefits-bar/';
+    // }])
 ;

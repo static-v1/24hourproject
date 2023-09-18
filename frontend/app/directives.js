@@ -33,6 +33,7 @@ var directives = angular.module('Directives', [])
 
     // directive for the hero carousel
     .controller('heroCarouselController', ['$scope', function($scope) {
+        $scope.hcAssetsDir = $scope.assetsDir + 'img/hero-carousel/';
     }])
     .directive('heroCarousel', ['$rootScope', function($rootScope){
         return {

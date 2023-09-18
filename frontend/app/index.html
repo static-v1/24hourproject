@@ -25,30 +25,31 @@
     <main-nav></main-nav> <!-- navigation bar -->
 
     <!-- benefits bar -->
-    <ul class="nav nav-fill bg-body-tertiary pt-2" id="benefits-bar" ng-controller="BenefitsBarController">
+    <ul class="nav nav-fill bg-body-tertiary pt-2" id="benefits-bar">
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <img ng-src="{{ bbAssetsDir + 'crown.png' }}" alt="crown"> <!-- uses scope variables in app.js -->
+                <img ng-src="{{ $root.imgAssetsDir + 'crown.png' }}" alt="crown">
+                <!-- uses scope variables in app.js -->
                 <span class="p-3">Exclusive Deals for VIP 2 and up!</span>
-            </a> 
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <img ng-src="{{ bbAssetsDir + 'star.png' }}" alt="star">
+                <img ng-src="{{ $root.imgAssetsDir + 'star.png' }}" alt="star">
                 <span class="p-3">Weekly New Arrivals</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <img ng-src="{{ bbAssetsDir + 'truck-delivery.png' }}" alt="truck">
+                <img ng-src="{{ $root.imgAssetsDir + 'truck-delivery.png' }}" alt="truck">
                 <span class="p-3">Free Shipping On Orders Over $100</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
                 <div class="img-parent">
-                    <img ng-src="{{ bbAssetsDir + 'pin.png' }}" alt="pin" class="overlap-base">
-                    <img ng-src="{{ bbAssetsDir + 'map-circle.png' }}" class="overlap-map">
+                    <img ng-src="{{ $root.imgAssetsDir + 'pin.png' }}" alt="pin" class="overlap-base">
+                    <img ng-src="{{ $root.imgAssetsDir + 'map-circle.png' }}" class="overlap-map">
                     <span class="p-4">Track Your Order</span>
                 </div>
             </a>
@@ -56,13 +57,60 @@
         <li class="nav-item">
             <a class="nav-link" href="#">
                 <div class="img-parent">
-                    <img ng-src="{{ bbAssetsDir + 'tag.png' }}" alt="tag" class="overlap-base">
-                    <img ng-src="{{ bbAssetsDir + 'tag-hole.png' }}" class="overlap-tag-hole">
+                    <img ng-src="{{ $root.imgAssetsDir + 'tag.png' }}" alt="tag" class="overlap-base">
+                    <img ng-src="{{ $root.imgAssetsDir + 'tag-hole.png' }}" class="overlap-tag-hole">
                     <span class="p-3">10% Off On Your First Order!</span>
                 </div>
             </a>
         </li>
     </ul>
+    <!-- end -->
+
+    <hero-carousel></hero-carousel> <!-- hero carousel -->
+
+    <!-- deals section -->
+    <!-- using bootstrap's grids make this a lot more convenient -->
+    <div id="deals" class="container-fluid text-center w-100">
+        <div class="row">
+            <div class="col">
+                <div class="value-off">$5 <span class="off">OFF</span></div>
+                <div class="off-details">ON ORDERS ABOVE $50</div>
+            </div>
+            <div class="col">
+                <div class="value-off">$15 <span class="off">OFF</span></div>
+                <div class="off-details">ON ORDERS ABOVE $75</div>
+            </div>
+            <div class="col">
+                <div class="value-off">$20 <span class="off">OFF</span></div>
+                <div class="off-details">ON ORDERS ABOVE $150</div>
+            </div>
+            <div class="col">
+                <div class="value-off">$30 <span class="off">OFF</span></div>
+                <div class="off-details">ON ORDERS ABOVE $200</div>
+            </div>
+            <!-- the button section is larger than the rest -->
+            <div class="col-4 mt-3">
+                <button type="button" id="check-deals-btn">CHECK OUT ALL SITE-WIDE DEALS</button>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+
+    <!-- vip section -->
+    <div id="vip" class="container-fluid w-100">
+        <div class="row">
+            <div class="col promo-col ps-0">
+                <img ng-src="{{ $root.imgAssetsDir + 'vip-left.png' }}">
+                <span class="promo-text-1">BLACK FRIDAY EXCLUSIVE</span>
+            </div>
+            <div class="col">
+                <span class="promo-text-2">FREE SHIPPING FOR ALL ORDERS FOR VIP 2 AND UP!</span>
+            </div>
+            <div class="col mt-3">
+                <button type="button" class="promo-btn">SHOP NOW</button>
+            </div>
+        </div>
+    </div>
     <!-- end -->
 
     <div class="container-fluid mt-auto">
