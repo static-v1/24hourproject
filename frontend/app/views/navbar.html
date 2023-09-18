@@ -1,58 +1,62 @@
 <!-- this is the partial template for the nav incase it requires to be added elsewhere -->
 <!-- this is using bootsrap 5 nav bars -->
-<nav class="navbar navbar-expand-lg bg-white sticky-top" id="navbar" ng-controller="NavController"> <!-- declare controller here -->
+<nav class="navbar navbar-expand-lg bg-white sticky-top" id="navbar" ng-controller="NavController">
+    <!-- declare controller here -->
     <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <!-- left nav -->
-            <ul class="navbar-nav mb-2 mb-lg-0">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-2">
                 <li class="nav-item">
-                    <a class="nav-link mx-1 active" aria-current="page" href="#">WOMAN</a>
+                    <a class="nav-link mx-1 active" aria-current="page" href="#">WOMEN</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="#">PLUS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="#">MAN</a>
+                    <a class="nav-link mx-1" href="#">MEN</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="#">ACCESSORIES</a>
                 </li>
             </ul>
 
+            <!-- for the two items below, they are using navAssetsDir to look up the dir of the assets, through the scope of the controller in directives.js -->
             <!-- nav brand -->
-            <a class="navbar-brand mx-auto" href="#"><img src="{{ navAssetsDir + 'Logo.svg' }}" alt="THREADED"></a>
-            
+            <a class="navbar-brand mx-auto" href="#"><img ng-src="{{ navAssetsDir + 'Logo.svg' }}" alt="THREADED"></a>
+
             <!-- right nav -->
-            <ul class="navbar-nav mb-2 mb-lg-0 me-4">
+            <ul class="navbar-nav mb-2 mb-lg-0 me-2">
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="#"><img src="{{ navAssetsDir + 'user.png' }}" alt="User"></a>
+                    <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'user.png' }}" alt="User"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="#"><img src="{{ navAssetsDir + 'shopping-bag.png' }}" alt="Bag"></a>
+                    <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'shopping-bag.png' }}" alt="Bag"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="#"><img src="{{ navAssetsDir + 'heart.png' }}" alt="Favorites"></a>
+                    <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'heart.png' }}" alt="Favorites"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="#"><img src="{{ navAssetsDir + 'support.png' }}" alt="Support"></a>
+                    <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'support.png' }}" alt="Support"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="#"><img src="{{ navAssetsDir + 'search.png' }}" alt="Search"></a>
+                    <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'search.png' }}" alt="Search"></a>
                 </li>
-                <li class="nav-item dropdown ms-1 me-auto">
-                    <a class="nav-link dropdown-toggle rounded-pill" id="currency-dropdown-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ selectedCurrency.flag }}" alt="{{ selectedCurrency.alt }}" class="rounded-pill">
+                <li class="nav-item dropdown ms-1 ">
+                    <a class="nav-link dropdown-toggle rounded-pill" id="currency-dropdown-btn" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img ng-src="{{ selectedCurrency.flag }}" alt="{{ selectedCurrency.alt }}" class="rounded-pill">
                         {{ selectedCurrency.label }}
-                        <img src="{{ navAssetsDir + 'caret-down.png' }}" alt="⌄">
+                        <img ng-src="{{ navAssetsDir + 'caret-down.png' }}" alt="⌄">
                     </a>
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" ng-repeat="cur in currency" ng-click="updateSelectedCurrency(cur)" href="#">
-                                <img src="{{ cur.flag }}" alt="{{ cur.alt }}" class="rounded-pill">
+                                <img ng-src="{{ cur.flag }}" alt="{{ cur.alt }}" class="rounded-pill">
                                 {{ cur.label }}
                             </a>
                         </li>

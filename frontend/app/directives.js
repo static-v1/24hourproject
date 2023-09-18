@@ -1,8 +1,9 @@
 // define the directives our app will use here
 var directives = angular.module('Directives', [])
+    // directive for the main navbar
     .controller('NavController', ['$scope', function($scope) {
         // define the assets folder here for ease of change
-        $scope.navAssetsDir = $scope.assetDir + 'img/nav/';
+        $scope.navAssetsDir = $scope.assetsDir + 'img/nav/';
         $scope.navCurrencyDir = $scope.navAssetsDir + 'currency/';
         $scope.currency = [
             {
@@ -21,13 +22,24 @@ var directives = angular.module('Directives', [])
             $scope.selectedCurrency = currency;
         }
     }])
-    
-    .directive('mainNav', function(){
+    .directive('mainNav', ['$rootScope', function($rootScope){
         return {
             restrict: 'E',
             transclude: true,
             controller: 'NavController',
-            templateUrl: '/app/views/navbar.html'
+            templateUrl: $rootScope.viewsDir + 'navbar.html'
         };
-    })
+    }])
+
+    // directive for the hero carousel
+    .controller('heroCarouselController', ['$scope', function($scope) {
+    }])
+    .directive('heroCarousel', ['$rootScope', function($rootScope){
+        return {
+            restrict: 'E',
+            transclude: true,
+            controller: 'heroCarouselController',
+            templateUrl: $rootScope.viewsDir + 'hero-carousel.html'
+        };
+    }])
 ;
