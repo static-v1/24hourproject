@@ -1,7 +1,8 @@
 // define the directives our app will use here
 var directives = angular.module('Directives', [])
     // directive for the main navbar
-    .controller('NavController', ['$scope', function($scope) {
+    .controller('NavController', ['$scope', '$rootScope', '$controller', function($scope, $rootScope, $controller) {
+        $controller('cartController', {$scope: $scope}); //to make this controller a child of cartController
         // define the assets folder here for ease of change
         $scope.navAssetsDir = $scope.assetsDir + 'img/nav/';
         $scope.navCurrencyDir = $scope.navAssetsDir + 'currency/';
@@ -108,6 +109,42 @@ var directives = angular.module('Directives', [])
             transclude: true,
             controller: 'trendingController',
             templateUrl: $rootScope.viewsDir + 'trending.html'
+        };
+    }])
+
+    // directive for the cart/recently bought
+    .controller('recentlyBoughtController', ['$scope', '$rootScope', '$controller', function($scope, $rootScope, $controller) {
+        $controller('cartController', {$scope: $scope}); //to make this controller a child of cartController
+        $scope.recentlyBoughtProducts = $rootScope.recentlyBought;
+    }])
+    .directive('recentlyBought', ['$rootScope', function($rootScope){
+        return {
+            restrict: 'E',
+            scope: true,
+            controller: 'recentlyBoughtController',
+            templateUrl: $rootScope.viewsDir + 'recently-bought.html'
+        };
+    }])
+
+    // insta section controller
+    .controller('instaFeedController', ['$scope', '$rootScope', function($scope, $rootScope) {
+        let path = $rootScope.imgAssetsDir + 'insta-feed/';
+
+        // sample data set as instagram feed, 
+        $scope.instaFeed = [
+            { preview: path + 'insta-feed-1.png' },
+            { preview: path + 'insta-feed-2.png' },
+            { preview: path + 'insta-feed-3.png' },
+            { preview: path + 'insta-feed-4.png' },
+            { preview: path + 'insta-feed-5.png' },
+        ]
+    }])
+    .directive('instaFeed', ['$rootScope', function($rootScope){
+        return {
+            restrict: 'E',
+            transclude: true,
+            controller: 'instaFeedController',
+            templateUrl: $rootScope.viewsDir + 'insta-feed.html'
         };
     }])
 ;

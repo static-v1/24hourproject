@@ -1,6 +1,61 @@
-/* body level css */
+/* global level css */
 body {
     font-family: 'Montserrat';
+}
+
+button.shop-now-btn {
+    width: 149px;
+    height: 42px;
+    padding: 15px, 30px, 15px, 30px;
+    gap: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: white;
+    line-height: 22px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-width: 0px;
+}
+
+button.black-btn {
+    background-color: black;
+    color: white;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border-width: 0px;
+    line-height: 22px;
+    padding: 10px 20px 10px 20px;
+}
+
+div.content-container {
+    padding-top: 40px;
+}
+
+.section-header {
+    font-weight: 800;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.section-caption {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.section-content {
+    margin-top: 50px;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.grey-bg {
+    background-color: #f2f2f2;
+}
+
+.base-bg-img {
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 
@@ -43,17 +98,6 @@ body {
 }
 
 /* these next entries are for the overlapping icons */
-#benefits-bar div.img-parent {
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-#benefits-bar img.overlap-base {
-    position: relative;
-    top: 0;
-    left: 0;
-}
 
 #benefits-bar img.overlap-map {
     position: absolute;
@@ -109,9 +153,8 @@ body {
 
 #hero-carousel div.carousel-item.slide .slide-right {
     right: 0;
-    opacity: 0.8;
-    -webkit-mask-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-    filter: saturate(0.1) contrast(1) brightness(1.7);
+    -webkit-mask-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+    filter: saturate(0.1) contrast(1) brightness(1.6) opacity(0.8);
     /* applying filters on the images so they meld according to spec, same here */
 }
 
@@ -127,15 +170,10 @@ body {
     height: 74px;
     top: 503px;
     left: 913px;
-    padding: 15px, 30px, 15px, 30px;
-    gap: 15px;
     font-weight: 600;
     font-size: 36px;
-    background-color: white;
-    line-height: 43px;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    border-width: 0px;
 }
+
 #hero-carousel div.carousel-indicators button {
     width: 15px;
     height: 15px;
@@ -172,13 +210,8 @@ body {
 }
 
 #deals button#check-deals-btn {
-    background-color: black;
-    color: white;
     width: 363px;
     height: 42px;
-    font-size: 18px;
-    font-weight: 600;
-    border-width: 0px;
 }
 
 
@@ -217,41 +250,17 @@ body {
 #vip button.promo-btn {
     position: relative;
     left: 92px;
-    width: 149px;
-    height: 42px;
-    padding: 15px, 30px, 15px, 30px;
-    gap: 15px;
-    font-weight: 600;
-    font-size: 18px;
-    background-color: white;
-    line-height: 22px;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    border-width: 0px;
 }
 
 
 /* trending section */
 
-#trending {
-    padding-top: 40px;
-}
-
-#trending-header span {
-    font-weight: 800;
-    font-size: 36px;
-}
-
-#trending-caption {
-    padding-top: 30px;
-}
-
-#trending-caption span {
-    font-weight: 400;
-    font-size: 14px;
+#trending-content {
+    margin-bottom: 0;
 }
 
 #trending-content div.row {
-    padding-top: 40px;
+    padding-bottom: 35px;
 }
 
 #trending-content div.row span {
@@ -262,11 +271,245 @@ body {
 }
 
 #trending-hashtags div.hashtag {
-    margin-top: 40px;
+    
     border-style: solid;
     border-width: 1px;
     font-weight: 600;
     font-size: 14px;
     padding: 10px 20px 10px 20px;
     margin-left: 10px;
+}
+
+
+/* new in section */
+
+#new-in {
+    margin-top: 60px;
+}
+
+#new-in, #new-in img.base-bg {
+    position: relative;
+    height: 400px;
+}
+
+#new-in img.right-bg,
+#new-in img.left-1-bg,
+#new-in img.left-2-bg,
+#new-in span.new-in-header,
+#new-in span.new-in-caption,
+#new-in button.new-in-btn {
+    position: absolute;
+    top: 0;
+}
+
+#new-in img.right-bg {
+    filter: saturate(1.7) contrast(1) opacity(0.8);
+}
+
+#new-in img.left-1-bg {
+    left: 101px;
+}
+
+#new-in img.left-2-bg {
+    left: 442px;
+}
+
+#new-in span.new-in-header {
+    width: 462px;
+    height: 172px;
+    top: 47px;
+    left: 799px;
+    font-weight: 800;
+    font-size: 86px;
+    line-height: 86px;
+    color: white;
+}
+
+#new-in span.new-in-caption {
+    font-weight: 600;
+    font-size: 28px;
+    left: 799px;
+    top: 240px;
+    color: white;
+}
+
+#new-in button.new-in-btn {
+    top: 317px;
+    left: 799px;
+}
+
+
+/* recently bought section */
+
+#recently-bought-content {
+    margin-bottom: 70px;
+}
+
+#recently-bought-content div.recently-bought-item {
+    width: 265px;
+    height: 415px;
+}
+
+#recently-bought-content .recently-bought-item-name {
+    width: 225px;
+    height: 50px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+#recently-bought-content .recently-bought-item-price {
+    font-weight: 600;
+}
+
+#recently-bought-content .recently-bought-item-sale {
+    font-weight: 800;
+    color: red;
+    width: 58px;
+}
+
+#recently-bought-content .add-cart-btn {
+    width: 149px;
+    height: 42px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 13%;
+    margin-top: 15px;
+}
+
+/* insta feed section */
+
+#insta-feed-content {
+    margin-bottom: 30px;
+}
+
+#insta-feed-content div.insta-feed-item {
+    width: 265px;
+}
+
+#insta-feed-footer {
+    padding-bottom: 60px;
+}
+
+
+/* newsletter bar section */
+
+#newsletter-bar {
+    background-color: black;
+    height: 75px;
+}
+
+#newsletter-header {
+    color:white;
+    position: absolute;
+    top: 13px;
+    left: 118px;
+    font-size: 32px;
+}
+
+#newsletter-email-bar {
+    position: absolute;
+    top: 8px;
+    left: 850px;
+}
+
+#newsletter-email-text {
+    position: absolute;
+    color: #4d4d4d;
+    top: 16px;
+    left: 870px;
+    width: 136px;
+}
+
+#newsletter-email-submit-box {
+    position: absolute;
+    top: 8px;
+    left: 1169px;
+}
+
+#newsletter-email-submit-symbol {
+    position: absolute;
+    top: 18px;
+    left: 1182px;
+}
+
+
+/* cart css section */
+
+.cart {
+    position:relative
+}
+
+.cart-container {
+    width:auto;
+    max-height: 650px;;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 25px 40px #1687d933;
+    top:70px;
+    right: 10px;
+    color: black;
+    overflow: scroll;
+    /* left: px; */
+}
+
+.cart-item {
+    position: relative;
+}
+
+.cart-item img {
+    position: relative;
+    width: 100px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.cart-item .name {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 10px;
+    width: 150px;
+    height: auto;
+}
+
+.cart-item .qty,
+.cart-item .price,
+.cart-item .sale-price,
+.cart-item .add-btn,
+.cart-item .sub-btn {
+    position: absolute;
+    font-size: 10px;
+    width: 58px;
+    left: 120px;
+}
+
+.cart-item .qty {
+    top: 70px;
+    
+}
+
+.cart-item .price {
+    top: 85px;
+}
+
+.cart-item .sale-price {
+    top: 85px;
+    left: 165px;
+}
+
+.cart-item .add-btn {
+    width: 50px;
+    height: 20px;
+    top: 100px;
+    left: 120px;
+}
+
+.cart-item .sub-btn {
+    width: 50px;
+    height: 20px;
+    top: 100px;
+    left: 165px;
 }

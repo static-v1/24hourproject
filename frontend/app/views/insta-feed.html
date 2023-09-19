@@ -1,0 +1,21 @@
+<!-- this is the partial template for the the insta Feed -->
+<div id="insta-feed" class="container-fluid w-100 content-container grey-bg">
+    <div id="insta-feed-header" class="d-flex flex-row justify-content-center section-header">
+        <span>Your Next Inspo</span>
+    </div>
+
+    <div id="insta-feed-caption" class="d-flex flex-row justify-content-center section-caption">
+        <span>Checkout who's wearing what by using #THREADEDInspo on Instagram</span>
+    </div>
+
+    <!-- iterates through the item list -->
+    <div id="insta-feed-content" class="d-flex flex-row justify-content-center section-content">
+        <div class="insta-feed-item" ng-repeat="insta in instaFeed">
+            <img ng-src="{{ insta.preview }}" class="insta-feed-item-preview">
+        </div>
+    </div>
+
+    <div id="insta-feed-footer" class="d-flex flex-row justify-content-center">
+        <button type="button" id="posts-btn" class="black-btn">VIEW ALL POSTS</button>
+    </div>
+</div>

@@ -34,9 +34,28 @@
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'user.png' }}" alt="User"></a>
                 </li>
+                <!-- this is the small cart -->
                 <li class="nav-item">
-                    <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'shopping-bag.png' }}" alt="Bag"></a>
+                    <a class="nav-link cart mx-1" href="#0" ng-click="toggleCart()">
+                        <img ng-src="{{ navAssetsDir + 'shopping-bag.png' }}" alt="Bag">
+                    </a>
+                    <div class="cart-container" ng-show="!isCartEmpty && isCartOpen">
+                        <div class="cart-item d-flex flex-row justify-content-left" ng-repeat="prod in $root.cart">
+                            <img ng-src="{{ prod.preview }}" class="" width="">
+                            <div class="name d-inline">{{ prod.name }}</div>
+                            <div class="qty d-inline">QTY: {{ prod.qty }}</div>
+                            <div class="sale-price d-inline" ng-show="-1 != prod.salePrice" style="color:red">${{ prod.salePrice }}</div>
+                            <div class="price d-inline" ng-style="-1 != prod.salePrice && { 'text-decoration': 'line-through' }">${{ prod.price }}</div>
+                            <button type="button" class="black-btn add-btn" ng-click="addProductToCart(prod.id)">Add</button>
+                            <button type="button" class="shop-now-btn sub-btn" ng-click="removeProductFromCart(prod.id)">Remove</button>
+                        </div>
+                        <hr>
+                        <div class="d-flex flex-row justify-content-center mb-3">
+                            <button type="button" class="black-btn">CHECK OUT</button>
+                        </div>
+                    </div>
                 </li>
+                <!-- end -->
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'heart.png' }}" alt="Favorites"></a>
                 </li>
@@ -46,7 +65,7 @@
                 <li class="nav-item">
                     <a class="nav-link mx-1" href="#"><img ng-src="{{ navAssetsDir + 'search.png' }}" alt="Search"></a>
                 </li>
-                <li class="nav-item dropdown ms-1 ">
+                <li class="nav-item dropdown ms-1">
                     <a class="nav-link dropdown-toggle rounded-pill" id="currency-dropdown-btn" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <img ng-src="{{ selectedCurrency.flag }}" alt="{{ selectedCurrency.alt }}" class="rounded-pill">
@@ -54,8 +73,8 @@
                         <img ng-src="{{ navAssetsDir + 'caret-down.png' }}" alt="⌄">
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" ng-repeat="cur in currency" ng-click="updateSelectedCurrency(cur)" href="#">
+                        <li ng-repeat="cur in currency">
+                            <a class="dropdown-item" ng-click="updateSelectedCurrency(cur)" href="#0">
                                 <img ng-src="{{ cur.flag }}" alt="{{ cur.alt }}" class="rounded-pill">
                                 {{ cur.label }}
                             </a>

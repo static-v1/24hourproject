@@ -1,18 +1,19 @@
-<div id="trending" class="container-fluid w-100">
+<!-- this is the partial template for the the trending section -->
+<div id="trending" class="container-fluid w-100 content-container" ng-controller="trendingController">
     <!-- the heading and caption -->
-    <div id="trending-header" class="row text-center">
+    <div id="trending-header" class="row text-center section-header">
         <div class="col-12">
             <span>Now Trending</span>
         </div>
     </div>
-    <div id="trending-caption" class="row text-center">
+    <div id="trending-caption" class="row text-center section-caption">
         <div class="col-12">
             <span>See what everyone's wearing right now</span>
         </div>
     </div>
 
     <!-- the content itself -->
-    <div id="trending-content" class="text-center">
+    <div id="trending-content" class="text-center section-content">
         <div class="row" ng-repeat="row in trendingPrepared">
             <div class="col-2"></div>
             <div class="col-2" ng-repeat="fashion in row">
@@ -23,9 +24,9 @@
         </div>
     </div>
 
-    <div id="trending-hashtags" class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+    <div id="trending-hashtags" class="d-flex flex-row justify-content-center">
         <div class="hashtag rounded-pill" ng-repeat="hashtag in hashtags">
             <span>{{ hashtag }}</span>
         </div>
-      </div>
+    </div>
 </div>

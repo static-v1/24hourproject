@@ -1,0 +1,17 @@
+<!-- this is the partial template for the the recently bought -->
+<div id="recently-bought" class="container-fluid w-100 content-container">
+    <div id="recently-bought-header" class="d-flex flex-row justify-content-center section-header">
+        <span>Recently Bought</span>
+    </div>
+
+    <!-- iterates through the item list -->
+    <div id="recently-bought-content" class="d-flex flex-row justify-content-center section-content">
+        <div class="recently-bought-item clearfix" ng-repeat="rbProd in recentlyBoughtProducts">
+            <img ng-src="{{ rbProd.preview }}" class="recently-bought-item-preview">
+            <div class="recently-bought-item-name">{{ rbProd.name }}</div>
+            <div class="recently-bought-item-sale float-start" ng-show="-1 != rbProd.salePrice">${{ rbProd.salePrice }}</div>
+            <div class="recently-bought-item-price" ng-style="-1 != rbProd.salePrice && { 'text-decoration': 'line-through' }">${{ rbProd.price }}</div>
+            <button type="button" class="black-btn add-cart-btn" ng-click="addProductToCart(rbProd.id)">ADD TO CART</button>
+        </div>
+    </div>
+</div>
